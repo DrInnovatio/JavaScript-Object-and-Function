@@ -1,3 +1,4 @@
+/*
 // Function constructor
 
 var john = {
@@ -60,3 +61,28 @@ var car = new Vehicle('Nisan', 'OKP-28', 2011, 13000);
 console.log(car1.discount())
 console.log(car)
 console.log(car.tyre)
+*/
+
+//=================================================================
+//=================================================================
+
+// Object.create
+/*
+var personProto = {
+  calculateAge: function () {
+    console.log(2016 - this.yearOfBirth)
+  }
+}
+
+var john = Object.create(personProto);
+john.name = 'John';
+john.yearOgBirth = 1988;
+john.job = 'teacher';
+
+var jane = Object.create(personProto, {
+  name: { value: 'Jane' },
+  yearOgBirth: { value: 1969 },
+  job: { value: 'designer' }
+});
+
+*/
