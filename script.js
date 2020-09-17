@@ -86,3 +86,33 @@ var jane = Object.create(personProto, {
 });
 
 */
+
+// Primitives vs objects
+
+var obj1 = {
+  name: 'Luke',
+  age: 26
+}
+
+var obj2 = obj1;
+obj1.age = 30;
+
+console.log(obj1.age)
+console.log(obj2.age)
+
+var age = 27;
+var obj3 = {
+  name: 'Brandon',
+  city: 'Seoul'
+};
+
+function change(a, b) {
+  a = 30;
+  b.city = 'New York';
+}
+
+change(age, obj3);
+
+console.log(age);
+change(age, obj3);
+console.log(obj3.city);
