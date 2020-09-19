@@ -157,13 +157,13 @@ console.log(rates);
 */
 
 // Functions returning functions
-
+/*
 function interviewQuestion(job) {
   if (job === 'designer') {
     return function (name) {
       console.log(name + ', can you please explain what UX designer is?');
     }
-  } else if (job === 'teacher') {
+  } else if (job !== 'teacher') {
     return function (name) {
       console.log(name + ' , what subject do you teach?')
     }
@@ -183,4 +183,50 @@ var designerQuestion = interviewQuestion('designer');
 designerQuestion('Amy');
 designerQuestion('Brenda');
 designerQuestion('Carl');
+*/
+
+
+// Immediately Invoked Function Expressions (IIFE)
+
+// function game() {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// }
+
+//game();
+
+(function () {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+(function (goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(2);
+
+(function (product, price) {
+  var result = `${product} is $${price}!!`;
+  console.log(result)
+})('Play station', 399);
+
+(function lottary() {
+  var randomNumbers = [];
+  var firstNum = [];
+  var added = true;
+
+  for (i = 0; i <= 6; i++) {
+
+    var num = parseInt(Math.random() * 45) + 1
+    firstNum.push(num);
+
+    if (num !== firstNum[i]) {
+      randomNumbers.push();
+    } else {
+      added = false;
+    }
+    randomNumbers.sort((a, b) => a - b);
+  }
+  console.log(`Your lucky numbers are ${randomNumbers}`)
+})();
 
