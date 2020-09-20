@@ -1,3 +1,4 @@
+/*
 function interviewQuestion(job) {
   if (job === 'designer') {
     return function (name) {
@@ -43,3 +44,39 @@ var circle = shape('yellow')
 square(10)
 triangle(9)
 circle(2)
+*/
+
+// powerBall numbers
+
+function powerBall() {
+
+  var lottoNumber = [];
+
+  function createNumber() {
+
+    if (lottoNumber.length < 7) {
+      let randomNumbers = Math.floor(Math.random() * 35) + 1;
+
+      if (notSame(randomNumbers)) {
+        lottoNumber.push(randomNumbers);
+      }
+      createNumber();
+    }
+
+    function notSame(randomNumbers) {
+      return lottoNumber.every((e) => randomNumbers !== e);
+    }
+  }
+  createNumber();
+  return lottoNumber.sort((a, b) => a - b);
+}
+
+function pbNumber() {
+  let pb = Math.floor(Math.random() * 20) + 1;
+  return pb;
+}
+
+let winningNumbers = powerBall();
+var powerBallNumber = pbNumber();
+
+console.log(`Your seven winning numbers are ${winningNumbers} , and power ball number is ${powerBallNumber}`)

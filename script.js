@@ -195,38 +195,37 @@ designerQuestion('Carl');
 
 //game();
 
-(function () {
-  var score = Math.random() * 10;
-  console.log(score >= 5);
-})();
+// (function () {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5);
+// })();
 
-(function (goodLuck) {
-  var score = Math.random() * 10;
-  console.log(score >= 5 - goodLuck);
-})(2);
+// (function (goodLuck) {
+//   var score = Math.random() * 10;
+//   console.log(score >= 5 - goodLuck);
+// })(2);
 
-(function (product, price) {
-  var result = `${product} is $${price}!!`;
-  console.log(result)
-})('Play station', 399);
+// (function (product, price) {
+//   var result = `${product} is $${price}!!`;
+//   console.log(result)
+// })('Play station', 399);
 
-(function lottary() {
-  var randomNumbers = [];
-  var firstNum = [];
-  var added = true;
+// (function lottary() {
+//   var randomNumbers = [];
+//   var firstNum = [];
+//   var added = true;
 
-  for (i = 0; i <= 6; i++) {
+//   for (i = 0; i <= 6; i++) {
 
-    var num = parseInt(Math.random() * 45) + 1
-    firstNum.push(num);
+//     var num = parseInt(Math.random() * 45) + 1
+//     firstNum.push(num);
 
-    if (num !== firstNum[i]) {
-      randomNumbers.push();
-    } else {
-      added = false;
-    }
-    randomNumbers.sort((a, b) => a - b);
-  }
-  console.log(`Your lucky numbers are ${randomNumbers}`)
-})();
-
+//     if (num !== firstNum[i]) {
+//       randomNumbers.push();
+//     } else {
+//       added = false;
+//     }
+//     randomNumbers.sort((a, b) => a - b);
+//   }
+//   console.log(`Your lucky numbers are ${randomNumbers}`)
+// })();
