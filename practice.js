@@ -48,6 +48,7 @@ circle(2)
 
 // powerBall numbers
 
+/*
 function powerBall() {
 
   var lottoNumber = [];
@@ -80,3 +81,20 @@ let winningNumbers = powerBall();
 var powerBallNumber = pbNumber();
 
 console.log(`Your seven winning numbers are ${winningNumbers} , and power ball number is ${powerBallNumber}`)
+*/
+
+var foo = [];
+
+function randomNumbers() {
+  for (i = 0; i < 6; i++) {
+    var newNumbers = parseInt(Math.random() * 50) + 1;
+    foo.push(newNumbers);
+  }
+  console.log(foo)
+}
+
+randomNumbers();
+
+function notSame(randomNumbers) {
+  return lottoNumber.every((e) => randomNumbers !== e);
+}

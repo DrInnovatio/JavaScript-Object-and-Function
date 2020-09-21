@@ -185,47 +185,110 @@ designerQuestion('Brenda');
 designerQuestion('Carl');
 */
 
-
+/*
 // Immediately Invoked Function Expressions (IIFE)
 
-// function game() {
-//   var score = Math.random() * 10;
-//   console.log(score >= 5);
-// }
+function game() {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+}
 
-//game();
+game();
 
-// (function () {
-//   var score = Math.random() * 10;
-//   console.log(score >= 5);
-// })();
+(function () {
+  var score = Math.random() * 10;
+  console.log(score >= 5);
+})();
 
-// (function (goodLuck) {
-//   var score = Math.random() * 10;
-//   console.log(score >= 5 - goodLuck);
-// })(2);
+(function (goodLuck) {
+  var score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(2);
 
-// (function (product, price) {
-//   var result = `${product} is $${price}!!`;
-//   console.log(result)
-// })('Play station', 399);
+(function (product, price) {
+  var result = `${product} is $${price}!!`;
+  console.log(result)
+})('Play station', 399);
 
-// (function lottary() {
-//   var randomNumbers = [];
-//   var firstNum = [];
-//   var added = true;
+(function lottary() {
+  var randomNumbers = [];
+  var firstNum = [];
+  var added = true;
 
-//   for (i = 0; i <= 6; i++) {
+  for (i = 0; i <= 6; i++) {
 
-//     var num = parseInt(Math.random() * 45) + 1
-//     firstNum.push(num);
+    var num = parseInt(Math.random() * 45) + 1
+    firstNum.push(num);
 
-//     if (num !== firstNum[i]) {
-//       randomNumbers.push();
-//     } else {
-//       added = false;
-//     }
-//     randomNumbers.sort((a, b) => a - b);
-//   }
-//   console.log(`Your lucky numbers are ${randomNumbers}`)
-// })();
+    if (num !== firstNum[i]) {
+      randomNumbers.push();
+    } else {
+      added = false;
+    }
+    randomNumbers.sort((a, b) => a - b);
+  }
+  console.log(`Your lucky numbers are ${randomNumbers}`)
+})();
+
+(function (name) {
+  console.log(`My name is ${name}`)
+})('Mike');
+
+(function (name, age, job, home) {
+  console.log(`My name is ${name} and is ${age} years ole. I am a ${job} and live in ${home}.`)
+})('Harry', '33', 'Developer', 'West end');
+
+*/
+//=================================================================
+//=================================================================
+
+// Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures   // Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures   // Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures
+
+function retirement(retirementAge) {
+  var a = ' years left until retirement.'
+  return function (yearOfBirth) {
+    var age = 2016 - yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+}
+
+var retirementUS = retirement(66);
+retirementUS(1990);
+retirement(66)(1990);
+
+var retirementGermany = retirement(65);
+var retirementJapan = retirement(70);
+
+retirementGermany(1978);
+retirementJapan(1967);
+
+function interviewQuestion(job) {
+  return function (name) {
+
+    if (job === 'designer') {
+      console.log(name + ', can you please explain what UX designer is?');
+    } else if (job === 'teacher') {
+      console.log(name + ' , what subject do you teach?')
+    } else {
+      console.log(name + ' , what do you do??')
+    }
+  }
+}
+
+interviewQuestion('teacher')('Karl');
+interviewQuestion('designer')('Jimmy');
+
+function finalPrice(price) {
+  return function (product, country) {
+    var a = price - (price * 0.25);
+    console.log(`The final price of ${product} is $${a} and made in ${country}`)
+  }
+}
+
+var boxingDay = finalPrice(3200)
+boxingDay('Laptop')
+
+var playStation = finalPrice(780)
+playStation('Play Station');
+
+finalPrice(4500)('iPad', 'America')  
