@@ -244,6 +244,7 @@ game();
 
 // Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures   // Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures   // Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures Closures
 
+/*
 function retirement(retirementAge) {
   var a = ' years left until retirement.'
   return function (yearOfBirth) {
@@ -291,4 +292,37 @@ boxingDay('Laptop')
 var playStation = finalPrice(780)
 playStation('Play Station');
 
-finalPrice(4500)('iPad', 'America')  
+finalPrice(4500)('iPad', 'America');
+
+*/
+
+// Bind, Call and Apply
+
+var harry = {
+  name: 'Harry',
+  age: 28,
+  job: 'teacher',
+  presentation: function (style, timeOfDay) {
+    if (style === 'formal') {
+      console.log('Good' + timeOfDay + ' , ladies and gentlemen! I\'m ' + this.name + ' , I\'m a ' + this.job + ' and I\'m ' +
+        this.age + ' years old.');
+    } else if (style === 'friendly') {
+      console.log("Hey! What's up?" + timeOfDay + ' , ladies and gentlemen! I\'m ' + this.name + ' , I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' +
+        this.age + ' years old.')
+    }
+  }
+}
+
+var emily = {
+  name: 'Emily',
+  age: 35,
+  job: 'designer'
+}
+
+harry.presentation('formal', 'morning');
+harry.presentation.call(emily, 'friendly', 'afternoon');
+// harry.presentation.apply(emily, ['friendly', 'afternoon']);
+
+var johnFriendly = harry.presentation.bind(harry, 'friendly');
+johnFriendly('morning');
+johnFriendly('night');
